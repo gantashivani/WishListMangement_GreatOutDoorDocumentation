@@ -21,21 +21,11 @@ export class LoginComponent implements OnInit {
   onSubmit(user:UserDTO):void{
     console.log(user)
     this.service.validateUser(user.userId).subscribe(
-    /*(data)=>{
-      this.details =data
-      console.log("returened"+this.details)
-    if (this.details == null) {
-     alert("Invalid username/password ");
-     }
-     else {
-       this.router.navigate(['/ListProduct', this.details.userId, this.details.password,this.details.userName]);
-       } 
-    }*/
 	(data)=>{
 	console.log(data);
-	if(data){
+	if(data == "Login Sucessfull"){
 		alert(data);
-		this.router.navigate(['/ListProduct', this.details.userId, this.details.password,this.details.userName]);}
+		this.router.navigate(['/ListProduct',user.userId,user.password,user.userName]);}
 	else 
 		alert("Invalid userId/userName/password");
 	}

@@ -30,7 +30,7 @@ export class ListproductComponent implements OnInit{
  ngOnInit(): void 
  {
    this.service.getproducts().subscribe( 
-     response =>this.handleSuccessfulResponse(response),
+     response =>{this.handleSuccessfulResponse(response),console.log(response)}
      );
  }
   onAdd(products:Products){

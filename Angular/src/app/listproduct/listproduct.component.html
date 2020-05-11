@@ -1,6 +1,6 @@
 <div class="navbar navbar-dark bg-dark a">
     <button type="button" class="btn  btn-primary navbar-btn" (click)=onView()> 
-                  <span class="glyphicon glyphicon-shopping-cart">ViewCart</span> 
+                  <span class="glyphicon glyphicon-shopping-cart"> ViewCart</span> 
      </button>
 </div>
 <div class="container">
@@ -15,14 +15,14 @@
         </thead>
         <tbody>
             <tr *ngFor = "let product of product">
-            <td> {{product.productCatogery}} </td>
             <td> {{product.productName}} </td>
+            <td> {{product.productCatogery}} </td>
             <td> 
                 <button type="button" class="btn  btn-block btn-primary" (click) = onAdd(product)> 
-                  <span class="glyphicon glyphicon-heart">Add</span> 
+                  <span class="glyphicon glyphicon-heart"> Add</span> 
                 </button>
                 <button type="button" class="btn  btn-block btn-primary" (click) = onView()> 
-                 <span class="glyphicon glyphicon-shopping-cart">View</span>
+                 <span class="glyphicon glyphicon-shopping-cart"> View</span>
                 </button>
             </td>
         </tbody> 
