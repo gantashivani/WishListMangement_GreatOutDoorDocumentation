@@ -10,6 +10,6 @@ import com.cg.go.dto.ProductsDTO;
 public interface ProductDAO extends JpaRepository<ProductsDTO, Integer>{
 	
 	@Query("Select distinct p.productName,p.productCatogery from ProductsDTO p")
-	List<ProductsDTO> fetch();
+	List<Object[]> fetch();
 
 }

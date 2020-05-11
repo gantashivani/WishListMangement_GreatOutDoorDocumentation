@@ -8,7 +8,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.cg.go.dto.ProductsDTO;
 import com.cg.go.service.ProductsListService;
 
 @RestController
@@ -21,7 +20,7 @@ public class ProductsListController {
 	
 	
 	@GetMapping("/ViewProducts")
-	public List<ProductsDTO>  viewProduct()
+	public List<Object[]>  viewProduct()
 	{
 		return service.viewProduct();
 	}

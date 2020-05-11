@@ -22,10 +22,9 @@ public class LoginPageController {
 	@GetMapping("/ValidateUser/{user}")
 	public String validateUser(@PathVariable Integer user) throws UserIdNotFound
 	{
-		if(loginservice.validateUser(user) != null)
+		if(loginservice.validateUser(user) == null)
 			 throw new UserIdNotFound("no user found");
 		else
-			return "Login Sucessfull";
-					
+			return "Login Sucessfull";		
 	}
 }

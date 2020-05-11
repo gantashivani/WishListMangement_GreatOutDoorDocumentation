@@ -7,7 +7,6 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
-import com.cg.go.dto.ProductsDTO;
 import com.cg.go.service.ProductsListService;
 
 
@@ -21,7 +20,7 @@ public class ProductsListApplicationTests {
 	@Test
 	public void  testProductsList() throws Exception {
 		
-		List<ProductsDTO> data=service.viewProduct();
+		List<Object[]> data=service.viewProduct();
 		Assertions.assertSame(null,data);
 	
 	}
@@ -29,7 +28,7 @@ public class ProductsListApplicationTests {
 	@Test
 	public void  testProductsListValid() throws Exception {
 		
-		List<ProductsDTO> data=service.viewProduct();
+		List<Object[]> data=service.viewProduct();
 		Assertions.assertNotNull(data);
 	
 	}
