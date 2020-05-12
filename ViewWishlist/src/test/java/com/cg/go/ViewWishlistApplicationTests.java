@@ -27,9 +27,9 @@ public class ViewWishlistApplicationTests {
 		List<ProductsDTO> data=service.viewWishList(5);
 		
 		List<ProductsDTO> result=new ArrayList<ProductsDTO>();
-		
-		result.add(new ProductsDTO(68,"Food","Banana"));
-		result.add(new ProductsDTO(69,"Food","Banana"));
+//		
+//		result.add(new ProductDTO(68,"Food","Banana"));
+//		result.add(new ProductDTO(69,"Food","Banana"));
 		
 		Assertions.assertSame(data,result);
 	}

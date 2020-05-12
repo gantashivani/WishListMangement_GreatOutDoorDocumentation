@@ -31,6 +31,15 @@ export class WishlistServiceService {
     console.log("inservice");
     return this.http.get<UserDTO>("http://localhost:1004/WishList/ViewWishList/"+user,{responseType:'json'});
   }
+  public onSubmitSearch(catogery:string) {
+    console.log("inservice"+catogery);
+    return this.http.get<Products>("http://localhost:1002/WishList/SearchProducts/"+catogery);
+  }
+  public getProductsData(minprice:number,maxprice:number)
+  {
+	  console.log("inservice");
+    return this.http.get<Products>("http://localhost:1002/WishList/FilterProducts/"+minprice+"/"+maxprice);
+  }	
 }
 
 export class UserDTO
@@ -48,15 +57,40 @@ export class UserDTO
 
 export class Products
 {
-  productId:number;
-  productCatogery:string;
-  productName:string;
+		 productId:number;
 
-  constructor(productId:number,productCatogery:string,productName:string)
+		 prize:number;
+		
+
+		 colour:string;
+		
+		dimensions:string;
+		
+		specifications:string;
+		
+		
+	manufacture:string;
+		
+	 quantity:number;
+		
+		 productCatogery:string;
+		
+	productName:string;
+		
+		 retailerId:number;
+
+  constructor(productId:number, productCatogery:string, productName:string,prize:number, colour:string,dimensions:string,specifications:string,manufacture:string,quantity:number,retailerId:number)
   {
-    this.productId=productId;
-    this.productCatogery=productCatogery;
-    this.productName=productName;
+		this.productId = productId;
+		this.prize = prize;
+		this.colour = colour;
+		this.dimensions = dimensions;
+		this.specifications = specifications;
+		this.manufacture = manufacture;
+		this.quantity = quantity;
+		this.productCatogery = productCatogery;
+		this.productName = productName;
+		this.retailerId = retailerId;
   }
 }
 

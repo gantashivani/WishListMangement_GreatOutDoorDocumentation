@@ -2,6 +2,7 @@ package com.cg.go;
 
 import java.util.ArrayList;
 import java.util.List;
+
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,8 +28,8 @@ public class AddToWishlistApplicationTests {
 		user.setUserName("A");
 		
 		List<ProductDTO> products=new ArrayList<ProductDTO>();
-		products.add(new ProductDTO(68,"Food","Banana"));
-		user.setProduct(products);
+//		products.add(new ProductDTO(68,"Food","Banana"));
+//		user.setProduct(products);
 		
 		
 		Object data=service.addProductToWishList(user);
@@ -47,8 +48,8 @@ public class AddToWishlistApplicationTests {
 		user.setUserName("A");
 		
 		List<ProductDTO> products=new ArrayList<ProductDTO>();
-		products.add(new ProductDTO(177,"Food","Banana"));
-		user.setProduct(products);
+//		products.add(new ProductDTO(177,"Food","Banana"));
+//		user.setProduct(products);
 		
 		
 		Object data=service.addProductToWishList(user);

@@ -24,7 +24,10 @@ public class AddToWishListController {
 	@PostMapping("/Add")
 	public Object addProductToWishList(@RequestBody UserDTO user)
 	{
-		return 	service.addProductToWishList(user);
+	
+		Object result=service.addProductToWishList(user);
+		return result;
+		//return new RequestEntity<Object>(result,HttpHeaders(), HttpStatus.OK);
 				
 	}
 }	

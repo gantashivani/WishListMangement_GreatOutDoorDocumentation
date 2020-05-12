@@ -1,0 +1,57 @@
+<div class="container">
+<form #getsearch="ngForm">
+  <h2>Category</h2>
+  <select class="btn" name="category" #categoryRef='ngModel' [(ngModel)]="category" ngModel required>
+    <option value="CampingEquipment">Camping Equipment</option>
+    <option value="GolfEquipment">Golf Equipment</option>
+    <option value="MountaineerEquipment">Mountaineering Equipment</option>
+    <option value="OutDoorProtection">Outdoor Protection</option>
+    <option value="PersonalAcessories">Personal Accessories</option>
+  </select>
+  <h4 *ngIf='categoryRef.errors && categoryRef.touched' class="alert alert-danger">
+   Category is required
+  </h4>
+  <div>
+    <input [disabled]="getsearch.invalid" type="submit" value="Submit" (click)="onSubmitSearch(category)" class="btn btn-success">
+  </div>
+  </form>
+  <!--colour: "red"
+dimensions: "9x7feet"
+manufacture: "DomeTents"
+prize: 3500
+productCatogery: "CampingEquipment"
+productId: 1
+productName: "Tent"
+quantity: 5
+retailerId: 101
+specifications: "OutDoorCamping"-->
+   <table class="table table-hover container">
+        <thead class="thead-dark">
+            <tr>
+				<th scope="col">Product Id</th>
+                <th scope="col">Product Name</th>
+                <th scope="col">Product Catogery</th>
+				<th scope="col">Product Prize</th>
+				<th scope="col">Product Dimension</th>
+				<th scope="col">Product Specification</th>
+                <th scope="col">Product Manufacture</th>
+				<th scope="col">Product Color</th>
+				<th scope="col">Product Quantity</th>
+				<th scope="col">Product Color</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor = "let product of productlist">
+            <td> {{product.colour}}</td>
+            <td> {{product.dimensions}} </td>
+			 <td> {{product.manufacture}} </td>
+            <td> {{product.prize}} </td>
+			 <td> {{product.productCatogery}} </td>
+            <td> {{product.productId}} </td>
+			 <td> {{product.productName}} </td>
+            <td> {{product.quantity}} </td>
+			<td> {{product.retailerId}} </td>
+            <td> {{product.specifications}} </td>
+        </tbody> 
+    </table>
+</div>
