@@ -20,7 +20,6 @@ class LoginValidationApplicationTests {
 	public void validateLogin() {
 			
 		Optional<UserDTO> data=service.validateUser(1);
-		
 		Assertions.assertNotEquals(0,data);
 	}
 	

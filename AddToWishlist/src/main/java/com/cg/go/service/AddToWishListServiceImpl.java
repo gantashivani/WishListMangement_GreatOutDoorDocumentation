@@ -1,9 +1,7 @@
 package com.cg.go.service;
 
+
 import java.util.List;
-
-
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -22,12 +20,16 @@ public class AddToWishListServiceImpl implements AddToWishListService{
 		                      
 		int userid=user.getUserId();
 		UserDTO  dataprevious=dao.fetch(userid);
-		
-		if(dataprevious!=null)
+	
+		/* checks whether user already has products or not*/ 
+		if(dataprevious!=null) 
 			{
-			List<ProductDTO> products = dataprevious.getProduct();
+			/* to fetch the previous products data*/
+			List<ProductDTO> products = dataprevious.getProduct(); 
+			
+			/*if already product is present it will be updated to the previous list and set it to the previous data */
 			if(products != null)
-			{
+			{  
 				products.addAll(user.getProduct());
 				user.setProduct(products);
 				return dao.save(user);

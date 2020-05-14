@@ -11,7 +11,7 @@ public interface ProductsListService {
 
 	List<ProductsDTO> searchProduct(String productCatogery);
 
-	List<Object[]> filterProduct(double minPrize, double maxPrize);
+	List<ProductsDTO> filterProduct(double minPrize, double maxPrize);
 
 
 }

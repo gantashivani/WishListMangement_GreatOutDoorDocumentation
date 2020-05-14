@@ -28,16 +28,14 @@ public class AddToWishlistApplicationTests {
 		user.setUserName("A");
 		
 		List<ProductDTO> products=new ArrayList<ProductDTO>();
-//		products.add(new ProductDTO(68,"Food","Banana"));
-//		user.setProduct(products);
-		
+		products.add(new ProductDTO(68,200.00,"brown","3mts","Reliance","MountaineerEquipment",10,"SurvivalRope","EmergencyRope",104));
+		user.setProduct(products);
 		
 		Object data=service.addProductToWishList(user);
 		
 		Assertions.assertEquals(1,data);
 	}
 
-	
 	@Test
 	public void  testViewWishListInvalidCase() {
 		
@@ -46,11 +44,10 @@ public class AddToWishlistApplicationTests {
 		user.setUserId(1);
 		user.setPassword("A123");
 		user.setUserName("A");
-		
+
 		List<ProductDTO> products=new ArrayList<ProductDTO>();
-//		products.add(new ProductDTO(177,"Food","Banana"));
-//		user.setProduct(products);
-		
+		products.add(new ProductDTO(68,200.00,"brown","3mts","Reliance","MountaineerEquipment",10,"SurvivalRope","EmergencyRope",104));
+		user.setProduct(products);
 		
 		Object data=service.addProductToWishList(user);
 		

@@ -12,7 +12,7 @@ export class FilterproductcomponentComponent implements OnInit {
   maxprice:number;
   message:string;
   mstatus:boolean;
-  products:Products[];
+  productlist:Products[];
   status:boolean;
   constructor(private service:WishlistServiceService) {
     this.status=false;
@@ -27,8 +27,8 @@ export class FilterproductcomponentComponent implements OnInit {
   }
   handleSuccessfulResponse(response) {
     console.log(response);
+    this.productlist = response;
     this.status=true;
-    this.products = response;
   }
   minPrice(minprice:number)
   {
@@ -37,8 +37,10 @@ export class FilterproductcomponentComponent implements OnInit {
   maxPrice(maxprice:number)
   {
     if(this.minprice>maxprice)
-    {this.message="Max price should be greater than Min price";
+    {
+	this.message="Max price should be greater than Min price";
     this.mstatus=true;
+	}
   }
-  }
+ 
 }

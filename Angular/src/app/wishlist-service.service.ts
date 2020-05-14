@@ -57,40 +57,29 @@ export class UserDTO
 
 export class Products
 {
-		 productId:number;
+ productId:number;
+prize:number;
+colour:string;
+dimensions:string;
+specifications:string;
+manufacture:string;
+quantity:number;
+productCatogery:string;
+productName:string;
+retailerId:number;
 
-		 prize:number;
-		
-
-		 colour:string;
-		
-		dimensions:string;
-		
-		specifications:string;
-		
-		
-	manufacture:string;
-		
-	 quantity:number;
-		
-		 productCatogery:string;
-		
-	productName:string;
-		
-		 retailerId:number;
-
-  constructor(productId:number, productCatogery:string, productName:string,prize:number, colour:string,dimensions:string,specifications:string,manufacture:string,quantity:number,retailerId:number)
+constructor(productId:number, productCatogery:string, productName:string,prize:number, colour:string,dimensions:string,specifications:string,manufacture:string,quantity:number,retailerId:number)
   {
-		this.productId = productId;
-		this.prize = prize;
-		this.colour = colour;
-		this.dimensions = dimensions;
-		this.specifications = specifications;
-		this.manufacture = manufacture;
-		this.quantity = quantity;
-		this.productCatogery = productCatogery;
-		this.productName = productName;
-		this.retailerId = retailerId;
+	this.productId = productId;
+	this.prize = prize;
+	this.colour = colour;
+	this.dimensions = dimensions;
+	this.specifications = specifications;
+	this.manufacture = manufacture;
+	this.quantity = quantity;
+	this.productCatogery = productCatogery;
+	this.productName = productName;
+	this.retailerId = retailerId;
   }
 }
 

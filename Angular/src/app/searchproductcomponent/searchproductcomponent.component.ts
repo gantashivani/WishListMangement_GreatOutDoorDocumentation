@@ -11,8 +11,10 @@ export class SearchproductcomponentComponent implements OnInit {
 
 category: string;
   productlist: Products[];
-
-   constructor(private service:WishlistServiceService,private router: Router){}
+mstatus:boolean;
+   constructor(private service:WishlistServiceService,private router: Router){
+   this.mstatus=false;
+   }
 
   ngOnInit(): void {
   }
@@ -24,6 +26,7 @@ category: string;
   handleSuccessfulResponse(response) {
     console.log(response);
     this.productlist = response;
+    this.mstatus=true;
   }
 
 }

@@ -17,6 +17,6 @@ public interface ProductDAO extends JpaRepository<ProductsDTO, Integer>{
 
 	
 	@Query("Select p from ProductsDTO p where p.prize >=?1 and p.prize<=?2")
-	List<Object[]> filterProduct(double minPrize, double maxPrize);
+	List<ProductsDTO> filterProduct(double minPrize, double maxPrize);
 
 }

@@ -27,7 +27,7 @@ public class ProductsListServiceImpl implements ProductsListService {
 	}
 
 	@Override
-	public List<Object[]> filterProduct(double minPrize, double maxPrize) {
+	public List<ProductsDTO> filterProduct(double minPrize, double maxPrize) {
 		return productdao.filterProduct(minPrize,maxPrize);
 	}
 }
