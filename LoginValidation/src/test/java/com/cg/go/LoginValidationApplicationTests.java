@@ -1,7 +1,5 @@
 package com.cg.go;
 
-import java.util.Optional;
-
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,14 +18,14 @@ class LoginValidationApplicationTests {
 	@Test
 	public void validateLogin() {
 			
-		Optional<UserDTO> data=service.validateUser(1);
+		UserDTO data=service.validateUser(1,"Shivani123");
 		Assertions.assertNotEquals(0,data);
 	}
 	
 	@Test
 	public void validateLoginInValidCase() {
 			
-		Optional<UserDTO> data=service.validateUser(1);
+		UserDTO data=service.validateUser(1,"Shivani");
 		
 		Assertions.assertEquals(1,data);
 	}
