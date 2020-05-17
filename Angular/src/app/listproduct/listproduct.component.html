@@ -4,11 +4,13 @@
 </head>
 <body>
 <div class="navbar a">
-    <button type="button" class="btn  btn-primary navbar-btn fas fa-shopping-cart" style="margin:5px;" (click)=onView()>ViewWishList</button>
+    <button type="button" class="btn  btn-primary navbar-btn fas fa-shopping-cart btn-margin-right" style="margin:5px;" (click)=onView()> ViewWishList</button>
 	 
-     <button type="button" class="btn  btn-primary navbar-btn" style="margin:5px;" (click)=onFilter()>Filter Products</button>
+     <button type="button" class="btn  btn-primary navbar-btn fas fa-filter btn-margin-left btn-margin-right" style="margin:5px;" (click)=onFilter()> Filter Products</button>
      
-	 <button type="button" class="btn  btn-primary navbar-btn" style="margin:5px;" (click)=onSearch()>Search Products</button>
+     <button type="button" class="btn  btn-primary navbar-btn fas fa-search btn-margin-left btn-margin-right" style="margin:5px;" (click)=onSearch()> Search Products</button>
+
+     <button type="button" class="btn  btn-primary navbar-btn  btn-margin-left btn-margin-right" style="margin:5px;" (click)=onLogOut()>LogOut</button>
 </div>
 <div class="container">
     <table class="table table-hover container">
@@ -24,6 +26,7 @@
                 <th scope="col">Quantity</th>
                 <th scope="col">RetailerId</th>
                 <th scope="col"></th>
+				<th scope="col"></th>
             </tr>
         </thead>
         <tbody>

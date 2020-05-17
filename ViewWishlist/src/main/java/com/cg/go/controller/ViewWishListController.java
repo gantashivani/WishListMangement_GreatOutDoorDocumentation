@@ -27,7 +27,6 @@ public class ViewWishListController {
 	@GetMapping("/ViewWishList/{userId}")
 	public ResponseEntity<List<ProductsDTO>> viewWishList(@PathVariable Integer userId)
 	{
-		//return service.viewWishList(userId);
 		return new ResponseEntity<List<ProductsDTO>>(service.viewWishList(userId),new HttpHeaders(), HttpStatus.OK);
 	}
 }

@@ -11,12 +11,14 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 
+/*create table userdto(user_Id number(5) not null primary key,
+ *  password varchar2(10), userName varchar2(10))*/
 @Entity
 @Table(name="userdto")
 public class UserDTO {
 	
 	@Id
-	@Column(length=5,unique = true,nullable=false)
+	@Column(length=5,unique = true,nullable=false) // @NotNull
 	private int userId;
 	
 	@Column(length=10)
@@ -26,6 +28,9 @@ public class UserDTO {
 	private String userName;
 
 	
+	/* due to OneToMany relationship single user can add multiple products
+	 * creates a seperate table with primary keys of userdto and productslist as
+	 * userdto_product with  userdo_user_Id, product_product_id */
 	@NotNull
 	@OneToMany(cascade=CascadeType.ALL)
 	private List<ProductDTO> product=new ArrayList<ProductDTO>();

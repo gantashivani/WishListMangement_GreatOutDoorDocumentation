@@ -7,6 +7,11 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 
+
+/* create table productslist(product_Id number(5) primary key,prize float(10) not null,colour varchar2(10),
+ * dimensions varchar2(20),specifications varchar2(20),manufacture varchar2(10) not null,quantity number(10),
+ * product_Catogery varchar2(20) not null,product_Name varchar2(20) not null,retailerId number(5) not null )  */
+
 @Entity
 @Table(name="productslist")
 public class ProductDTO {

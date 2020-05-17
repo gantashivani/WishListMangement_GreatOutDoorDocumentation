@@ -1,20 +1,28 @@
 package com.cg.go.entity;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
 
+/*create table userdto(user_Id number(5) not null primary key,
+ *  password varchar2(10), userName varchar2(10))*/
 @Entity
 @Table(name="userdto")
 public class UserDTO {
 	
+
 	@Id
-	@GeneratedValue
+	@Column(length=5,unique = true,nullable=false)
 	private int userId;
+	
+	@Column(length=10)
 	private String password;
+	
+	@Column(length=10)
 	private String userName;
+
 	
 	public UserDTO(int userId, String password, String userName) {
 		super();

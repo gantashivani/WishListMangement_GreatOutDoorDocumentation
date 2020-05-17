@@ -26,8 +26,10 @@ export class LoginComponent implements OnInit {
 	if(data == "Login Sucessfull"){
 		alert(data);
 		this.router.navigate(['/ListProduct',user.userId,user.password,user.userName]);}
-	else 
+	else {
 		alert("Invalid userId/userName/password");
+		this.router.navigate([' ']);
+	}
 	}
 	);}
 }

@@ -9,7 +9,7 @@ import com.cg.go.entity.UserDTO;
 @Repository
 public interface AddToWishListDAO extends JpaRepository<UserDTO,Integer>{
 
-	
+	/*to fetch the data by userId even the relationship data as an object*/
 	@Query("select d from UserDTO d where d.userId=?1")
 	public UserDTO fetch(int userid);
 

@@ -1,6 +1,9 @@
 package com.cg.go.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -19,12 +22,13 @@ public class LoginPageController {
 	private LoginService loginservice;
 	
 	
+	/* to validate the user id ad return an exception if the user id doesn't exist*/
 	@GetMapping("/ValidateUser/{user}")
-	public String validateUser(@PathVariable Integer user) throws UserIdNotFound
+	public ResponseEntity<String> validateUser(@PathVariable Integer user) throws UserIdNotFound
 	{
 		if(loginservice.validateUser(user) == null)
 			 throw new UserIdNotFound("no user found");
 		else
-			return "Login Sucessfull";		
+			return new ResponseEntity<String>("Login Sucessfull",new HttpHeaders(), HttpStatus.OK);		
 	}
 }

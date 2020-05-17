@@ -16,6 +16,7 @@ class LoginValidationApplicationTests {
 	@Autowired
 	private LoginService service;
 	
+	/*validate userId if exists returns 1 else a 0*/
 	@Test
 	public void validateLogin() {
 			

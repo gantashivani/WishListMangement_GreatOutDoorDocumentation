@@ -18,11 +18,12 @@ public class AddToWishlistApplicationTests {
 	@Autowired
 	private AddToWishListService service;
 	
+	
+	/* validating whether the data is added or not */
 	@Test
 	public void  testViewWishList() {
 		
 		UserDTO user=new UserDTO();
-		
 		user.setUserId(1);
 		user.setPassword("A123");
 		user.setUserName("A");
@@ -33,7 +34,7 @@ public class AddToWishlistApplicationTests {
 		
 		Object data=service.addProductToWishList(user);
 		
-		Assertions.assertEquals(1,data);
+		Assertions.assertEquals(1,data); 
 	}
 
 	@Test

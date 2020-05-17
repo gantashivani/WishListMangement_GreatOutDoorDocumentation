@@ -27,21 +27,19 @@ public class ProductsListController {
 	@GetMapping("/ViewProducts")
 	public ResponseEntity<List<Object[]>>  viewProduct()
 	{
-		//return service.viewProduct();
 		return new ResponseEntity<List<Object[]>>(service.viewProduct(),new HttpHeaders(), HttpStatus.OK);
 	}
 	
 	@GetMapping("/SearchProducts/{productCatogery}")
-	public List<ProductsDTO>  searchProduct(@PathVariable String productCatogery)
+	public ResponseEntity<List<ProductsDTO>>  searchProduct(@PathVariable String productCatogery)
 	{
-		return service.searchProduct(productCatogery);
+		return new ResponseEntity<List<ProductsDTO>>(service.searchProduct(productCatogery),new HttpHeaders(),HttpStatus.OK);
 	}
 	
 	@GetMapping("/FilterProducts/{minPrize}/{maxPrize}")
-	public List<ProductsDTO>  filterProduct(@PathVariable double minPrize,@PathVariable double maxPrize)
+	public ResponseEntity<List<ProductsDTO>>  filterProduct(@PathVariable double minPrize,@PathVariable double maxPrize)
 	{
-		return service.filterProduct(minPrize,maxPrize);
+		return new ResponseEntity<List<ProductsDTO>>(service.filterProduct(minPrize,maxPrize),new HttpHeaders(), HttpStatus.OK);
 	}
-	
 }
 
