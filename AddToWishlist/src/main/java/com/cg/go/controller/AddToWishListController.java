@@ -23,7 +23,7 @@ public class AddToWishListController {
 	public Object addProductToWishList(@RequestBody UserDTO user)
 	{
 	
-		Object result=service.addProductToWishList(user);
-		return result;	
+		 return service.addProductToWishList(user);
+		
 	}
 }	
